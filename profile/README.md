@@ -1,4 +1,3 @@
-# RR0
 The RR0 librairies have been built to:
 1. implement the [RR0 website](https://rr0.org)
 2. allow others to implement their own database/website.
