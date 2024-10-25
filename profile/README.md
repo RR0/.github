@@ -4,21 +4,22 @@ The RR0 librairies have been built to:
 
 ```mermaid
 classDiagram
-    class RR0["RR0 website"] {
-        build()
-    }
     namespace rr0 {
+        class RR0["rr0.org"] {
+            files.html
+            build()
+        }
         class common
         class lang
         class time {
             Level2Date
             Level2Duration
             Level2Interval
+            TimeContext
         }
         class data {
             RR0Data
             RR0Event
-            
         }
         class place {
             Place
@@ -42,7 +43,15 @@ classDiagram
     data --> time
     data --> fileutil
     RR0 --> cms
+    cms --> common
+    cms --> lang
+    cms --> time
+    cms --> place
+    cms --> org
     cms --> ssg-api
+    place --> common
+    place --> lang
+    place --> data
     class ssg-api
     namespace javarome {
         class fileutil {
